@@ -1,0 +1,56 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Contoso.Apps.SportsLeague.Offers"
+  },
+  "host": "contovcpofferapi.azurewebsites.net:443",
+  "schemes": [ "https" ],
+  "paths": {
+    "/api/get": {
+      "get": {
+        "tags": [ "Offers" ],
+        "operationId": "Offers_Get",
+        "consumes": [],
+        "produces": [ "application/json", "text/json", "application/xml", "text/xml" ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/OfferedProduct" }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "OfferedProduct": {
+      "type": "object",
+      "properties": {
+        "ProductID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ProductName": { "type": "string" },
+        "Description": { "type": "string" },
+        "ImagePath": { "type": "string" },
+        "ThumbnailPath": { "type": "string" },
+        "UnitPrice": {
+          "format": "double",
+          "type": "number"
+        },
+        "SalePercentage": {
+          "format": "double",
+          "type": "number"
+        },
+        "SalePrice": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    }
+  }
+}

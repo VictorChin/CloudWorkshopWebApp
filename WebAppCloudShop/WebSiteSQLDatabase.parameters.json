@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "hostingPlanName": {
+      "value": "cloudshop-vc"
+    },
+    "administratorLogin": {
+      "value": "chinzilla"
+    },
+    "databaseName": {
+      "value": "ContosoDB"
+    },
+    "skuName": {
+      "value": "S1"
+    },
+    "administratorLoginPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/78197461-e69c-49e7-83e9-5ce0ec95c6c2/resourceGroups/VMs/providers/Microsoft.KeyVault/vaults/monkey-vc"
+        },
+        "secretName": "passwd"
+      }
+    }
+  }
+}
